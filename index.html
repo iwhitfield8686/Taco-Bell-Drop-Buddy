@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taco Bell Hold App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="app-shell">
+    <div class="page" id="page-start">
+      <h1>Taco Bell Drop Buddy</h1>
+      <button id="startBtn" class="primary-btn">Start</button>
+    </div>
+
+    <div class="page hidden" id="page-selection">
+      <h2>Choose an item</h2>
+      <div class="option-grid" id="optionGrid"></div>
+      <div id="selectionMessage" class="info-banner hidden"></div>
+      <div id="lowStockBanner" class="alert-banner hidden"></div>
+      <div class="button-row">
+        <button id="holdingBtn" class="secondary-btn">Currently Holding</button>
+        <button id="selectionBackBtn" class="secondary-btn">Back</button>
+      </div>
+    </div>
+
+    <div class="page hidden" id="page-holding">
+      <h2>Currently Holding</h2>
+      <div id="holdingList" class="hold-list"></div>
+      <div class="hold-section">
+        <h3>Discarded items</h3>
+        <div id="discardedList" class="hold-list"></div>
+      </div>
+      <p class="help-text">These items will be discarded when their hold timer reaches 0.</p>
+      <div class="button-row">
+        <button id="printReportBtn" class="secondary-btn">Print report</button>
+        <button id="newShiftBtn" class="danger-btn">Start new shift</button>
+        <button id="holdingBackBtn" class="secondary-btn">Back</button>
+      </div>
+    </div>
+
+    <div class="page hidden" id="page-action">
+      <h2 id="actionTitle"></h2>
+      <div class="radio-group">
+        <label><input type="radio" name="actionType" value="add"> Add product</label>
+        <label><input type="radio" name="actionType" value="remove"> Remove product</label>
+      </div>
+
+      <div class="action-controls hidden" id="addControls">
+        <label>
+          How many are being added?
+          <input type="number" id="quantityInput" min="1" value="1" />
+        </label>
+      </div>
+
+      <div class="action-controls hidden" id="removeControls">
+        <label>
+          How many are being removed?
+          <input type="number" id="removeQuantityInput" min="1" value="1" />
+        </label>
+      </div>
+
+      <div class="button-row">
+        <button id="actionBackBtn" class="secondary-btn">Back</button>
+        <button id="actionContinueBtn" class="primary-btn" disabled>Continue</button>
+      </div>
+    </div>
+
+    <div class="page hidden" id="page-summary">
+      <h2>Summary</h2>
+      <p id="summaryText"></p>
+      <div id="timerStatus" class="timer-status hidden">
+        <p>Hold timer ends in <span id="timerDisplay">04:00:00</span>.</p>
+      </div>
+      <div class="button-row">
+        <button id="summaryRestartBtn" class="primary-btn">Start over</button>
+      </div>
+    </div>
+  </div>
+  <div id="printReport" class="print-report"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
