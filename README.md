@@ -65,15 +65,18 @@ The Taco Bell Drop Buddy is a specialized web-based application designed to help
 ### Option 1: Using Python (Recommended)
 
 1. Download or clone the project to your local machine
-2. Navigate to the project directory in your terminal/command prompt:
+2. ```bash
+3. git clone https://github.com/iwhitfield8686/Taco-Bell-Drop-Buddy.git
+4.    ```
+5. Navigate to the project directory in your terminal/command prompt:
    ```bash
    cd /path/to/taco-bell-drop-buddy
    ```
-3. Start the Python web server:
+6. Start the Python web server:
    ```bash
    python3 -m http.server 8000
    ```
-4. Open your browser and visit:
+7. Open your browser and visit:
    ```
    http://localhost:8000
    ```
